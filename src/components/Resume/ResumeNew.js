@@ -28,33 +28,21 @@ function ResumeNew() {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-};
-  
+  };
 
   return (
-    <div>
-      <Container fluid className="resume-section">
+    <div className="min-vh-100">
+      <Container fluid className="resume-section min-vh-100">
         <Particle />
         <Row style={{ justifyContent: "center", position: "relative" }}>
-          // <Button
-          //   variant="primary"
-          //   href={pdf}
-          //   target="_blank"
-          //   style={{ maxWidth: "250px" }}
-          // >
-          //   <AiOutlineDownload />
-          //   &nbsp;Download CV
-          // </Button>
-
           <Button
             variant="primary"
             onClick={downloadCV} // Trigger the download on button click
             style={{ maxWidth: "250px" }}
           >
-              <AiOutlineDownload />
-              &nbsp;Download CV
+            <AiOutlineDownload />
+            &nbsp;Download CV
           </Button>
-            
         </Row>
 
         <Row className="resume">
@@ -65,12 +53,15 @@ function ResumeNew() {
           >
             {/* Render each page dynamically based on the number of pages */}
             {Array.from(new Array(numPages), (el, index) => (
-              <div key={index} style={{ marginBottom: "20px", width: "fit-content", margin: "0 auto" }}>
-                <Page
-                  pageNumber={index + 1}
-                  scale={width > 786 ? 1.7 : 0.6}
-                  
-                />
+              <div
+                key={index}
+                style={{
+                  marginBottom: "20px",
+                  width: "fit-content",
+                  margin: "0 auto",
+                }}
+              >
+                <Page pageNumber={index + 1} scale={width > 786 ? 1.7 : 0.6} />
               </div>
             ))}
           </Document>

@@ -39,7 +39,7 @@ function ResumeNew() {
         <Row className="resume">
           <Document
             file={pdf}
-            className="d-flex justify-content-center"
+            className="d-flex gap-3 flex-column justify-content-center"
             onLoadSuccess={onLoadSuccess}
           >
             {/* Render each page dynamically based on the number of pages */}

@@ -44,7 +44,7 @@ function ResumeNew() {
           >
             {/* Render each page dynamically based on the number of pages */}
             {Array.from(new Array(numPages), (el, index) => (
-              <div key={index} classsName="w-auto mx-auto" style={{ marginBottom: "20px" }}> {/* Add margin for spacing between pages */}
+              <div key={index} style={{ marginBottom: "20px", width: "fit-content", margin: "0 auto" }}>
                 <Page
                   pageNumber={index + 1}
                   scale={width > 786 ? 1.7 : 0.6}

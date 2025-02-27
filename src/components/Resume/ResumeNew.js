@@ -20,20 +20,41 @@ function ResumeNew() {
     setNumPages(numPages);
   }
 
+  const downloadCV = () => {
+    const pdfUrl = "./pdf.pdf"; // Path to the PDF file you want to download
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "CV.pdf"; // Specify the filename for the downloaded file
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+};
+  
+
   return (
     <div>
       <Container fluid className="resume-section">
         <Particle />
         <Row style={{ justifyContent: "center", position: "relative" }}>
+          // <Button
+          //   variant="primary"
+          //   href={pdf}
+          //   target="_blank"
+          //   style={{ maxWidth: "250px" }}
+          // >
+          //   <AiOutlineDownload />
+          //   &nbsp;Download CV
+          // </Button>
+
           <Button
             variant="primary"
-            href={pdf}
-            target="_blank"
+            onClick={downloadCV} // Trigger the download on button click
             style={{ maxWidth: "250px" }}
           >
-            <AiOutlineDownload />
-            &nbsp;Download CV
+              <AiOutlineDownload />
+              &nbsp;Download CV
           </Button>
+            
         </Row>
 
         <Row className="resume">

@@ -25,26 +25,15 @@ function ResumeNew() {
       <Container fluid className="resume-section">
         <Particle />
         <Row style={{ justifyContent: "center", position: "relative" }}>
-          // <Button
-          //   variant="primary"
-          //   href={pdf}
-          //   target="_blank"
-          //   style={{ maxWidth: "250px" }}
-          // >
-          //   <AiOutlineDownload />
-          //   &nbsp;Download CV
-          // </Button>
-  <Button
-  variant="primary"
-  as="a" // Make the Button behave like a link
-  href={pdf}
-  download // This ensures the file is downloaded instead of opened in the browser
-  style={{ maxWidth: "250px" }}
->
-  <AiOutlineDownload />
-  &nbsp;Download CV
-</Button>
-
+          <Button
+            variant="primary"
+            href={pdf}
+            target="_blank"
+            style={{ maxWidth: "250px" }}
+          >
+            <AiOutlineDownload />
+            &nbsp;Download CV
+          </Button>
         </Row>
 
         <Row className="resume">

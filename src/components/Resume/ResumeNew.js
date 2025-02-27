@@ -25,15 +25,26 @@ function ResumeNew() {
       <Container fluid className="resume-section">
         <Particle />
         <Row style={{ justifyContent: "center", position: "relative" }}>
-          <Button
-            variant="primary"
-            href={pdf}
-            target="_blank"
-            style={{ maxWidth: "250px" }}
-          >
-            <AiOutlineDownload />
-            &nbsp;Download CV
-          </Button>
+          // <Button
+          //   variant="primary"
+          //   href={pdf}
+          //   target="_blank"
+          //   style={{ maxWidth: "250px" }}
+          // >
+          //   <AiOutlineDownload />
+          //   &nbsp;Download CV
+          // </Button>
+  <Button
+  variant="primary"
+  as="a" // Make the Button behave like a link
+  href={pdf}
+  download // This ensures the file is downloaded instead of opened in the browser
+  style={{ maxWidth: "250px" }}
+>
+  <AiOutlineDownload />
+  &nbsp;Download CV
+</Button>
+
         </Row>
 
         <Row className="resume">
@@ -44,11 +55,11 @@ function ResumeNew() {
           >
             {/* Render each page dynamically based on the number of pages */}
             {Array.from(new Array(numPages), (el, index) => (
-              <div key={index} style={{ marginBottom: "20px" }}> {/* Add margin for spacing between pages */}
+              <div key={index} classsName="w-auto mx-auto" style={{ marginBottom: "20px" }}> {/* Add margin for spacing between pages */}
                 <Page
                   pageNumber={index + 1}
                   scale={width > 786 ? 1.7 : 0.6}
-                  style={{display:"flex", justifyContent: "center"}}
+                  
                 />
               </div>
             ))}

@@ -24,7 +24,7 @@ function ResumeNew() {
     const pdfUrl = "./pdf.pdf"; // Path to the PDF file you want to download
     const link = document.createElement("a");
     link.href = pdfUrl;
-    link.download = "CV.pdf"; // Specify the filename for the downloaded file
+    link.download = "Rabeeb-Aqdus-Blockchain-Developer-CV.pdf"; // Specify the filename for the downloaded file
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);

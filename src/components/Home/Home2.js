@@ -1,7 +1,7 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import myImg from "../hi3.png";
-import { Tilt } from "react-tilt";
+import { Tilt } from 'react-next-tilt';
 import {
   AiFillGithub,
   AiOutlineTwitter,

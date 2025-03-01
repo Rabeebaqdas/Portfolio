@@ -1,183 +1,89 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import ProjectCard2 from "./ProjectCards2";
+import ProjectCard from "./ProjectCards";
 import Particle from "../Particle";
-import btcpx from "../btcpx.png"
-import high from "../thc.png"
-import trapdart from "../trapdart.png"
-import market from "../nftm.png"
-import hotei from "../hotei.png"
-import defi from "../defiswap.png"
-import air from "../air.png"
-import legacy from "../legacy.png"
-import unicorn from "../unicorn.png"
-import qorra from "../qorra.png"
-import whales from "../whales.PNG"
-import gala from "../gala.PNG"
-import crnt from "../crnt.PNG"
-import dapp from "../dapp.PNG"
-import cip from "../cip.PNG"
-import Footer from "../Footer";
+import nfstay from "../nfstay.png";
+import cod from "../cod.png";
+import degen from "../degen.png";
+import btcpx from "../btcpx.png";
+import iamdivinity from "../iamdivinity.png";
+import airbncapital from "../airbncapital.png";
 
-function Featured() {
+const projects = [
+  {
+    imgPath: nfstay,
+    title: "NFsTay RWA",
+    description:
+      "NFsTay RWA is a decentralized platform enabling users to co-own high-yield real estate properties worldwide, starting with investments as low as $1,000. Co-owners actively participate in key property decisions through a democratic voting system, ensuring transparency and control over their investments. The platform automates monthly income distribution from rental profits, providing a seamless profitability-sharing experience. Properties are strategically selected for long-term capital appreciation, offering co-owners assets expected to appreciate over time.",
+    demoLink: "https://nfstay.com/",
+  },
+  {
+    imgPath: iamdivinity,
+    title: "IAMDIVINITY",
+    description:
+      "IAMDIVINITY is a blockchain-based decentralized application (DApp) that integrates spiritual and lifestyle learning with a rewards-driven referral model. Users can purchase exclusive personal growth courses and earn bonuses by referring others. The platform ensures transparency and security through blockchain integration, automates fair rewards distribution via smart contracts, and maintains a decentralized architecture for secure data tracking. Administrators have real-time visibility into the network, facilitating efficient reward validation and distribution.",
+    demoLink: "https://iamdivinity.io/",
+  },
+  {
+    imgPath: cod,
+    title: "Crypto on Discount",
+    description:
+      "COD is a decentralized platform enhancing cryptocurrency investments by offering high-yield staking options and exclusive discounts. Users can stake their USDC (BEP-20) tokens for attractive returns and list their crypto assets to boost visibility. The platform generates revenue through automated trading, bots, and Uniswap validator rewards. Key features include high-yield staking, revenue sharing from trading activities, exclusive cryptocurrency purchase discounts, enhanced crypto asset visibility, and special discounts for new users.",
+    demoLink: "https://cryptoondiscount.com/",
+  },
+  {
+    imgPath: degen,
+    title: "Degen Forest",
+    description:
+      "Degen Forest is a decentralized Web3 platform offering the Degen Wallet, an all-in-one crypto solution integrating DeFi, NFTs, staking, and yield farming, available on Android and iOS. The platform operates under a DAO governance model, allowing Moola Token holders to participate in decision-making and earn rewards through staking. Revenue is generated via services like swaps and NFT listings, with a 0.69% fee, part of which is used to buy and burn Moola Tokens, enhancing their value.",
+    demoLink: "https://degenforest.com/",
+  },
+  {
+    imgPath: airbncapital,
+    title: "AirbnCapital",
+    description:
+      "AirbnCapital is a decentralized platform revolutionizing real estate investments through blockchain technology. Users can farm STAY tokens, stake ROCK NFTs for passive rewards, and trade NFTs in the marketplace. The platform enables seamless STAY purchases with crypto and allows users to mint ROCK NFTs using USDC. Its referral program rewards users with $25 when referees purchase ROCK NFTs. With security, transparency, and profitability at its core, AirbnCapital offers a dynamic ecosystem for digital real estate and NFT investments.",
+    demoLink: "https://www.airbncapital.com/",
+  },
+  {
+    imgPath: btcpx,
+    title: "BTC PROXY",
+    description:
+      "BTC Proxy is a decentralized protocol enabling Bitcoin tokenization across Ethereum, Polygon, and BNB Chain. It offers features like Bitcoin farming, allowing PRXY token holders to earn BTCpx rewards, and compound staking through a rebase mechanism. The protocol also supports bonding, where users can exchange assets for discounted PRXY tokens, enhancing liquidity. Additionally, BTC Proxy provides interest-bearing products and utilizes NFT keys and vaults for yield optimization, positioning itself as a leader in Bitcoin DeFi solutions.",
+    demoLink: "https://btcproxy.io/",
+  },
+];
 
-
-
+function Projects() {
   return (
     <>
-    <Container fluid className="project-section">
-      <Particle />
-      <Container>
-        <h1 className="project-heading">
-          My Featured <strong className="purple">Projects </strong>
-        </h1>
-        <p style={{ color: "white" }}>
-          Here are a few featured projects I've worked on recently.
-        </p>
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-
-          <Col md={4} className="project-card">
-            <ProjectCard2
-              imgPath={btcpx}
-              isBlog={false}
-              title="BTC Proxy"
-              description="BTC Proxy is a multi-institutional protocol for the decentralized tokenization of Bitcoin on ERC20 and MRC20 formats utilizing the Proxy Relay."
-              demoLink="https://www.btcproxy.io"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard2
-              imgPath={high}
-              isBlog={false}
-              title="The High club"
-              description="The High Club is an exclusive well-being project, which will be launched on the Ethereum Blockchain. Become a member of The High Club by minting the one-of-a-kind NFT."
-              demoLink="https://mint.thehighclub.co/"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard2
-              imgPath={air}
-              isBlog={false}
-              title="Air Brick"
-              description="Air Brick is a decentralized finance (DeFi) platform built to create and facilitate a token pegged on USDT. It Brings Opportunities for tokens."
-              demoLink="https://airbrick.co.uk/"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard2
-              imgPath={legacy}
-              isBlog={false}
-              title="Legacy"
-              description="Discover a groundbreaking NFT Marketplace where deploying your wrapped NFTs to V2 unlocks exclusive perks and elevated benefits for both creators and collectors."
-              demoLink="https://royalty-aggregator-v1.vercel.app/"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard2
-              imgPath={hotei}
-              isBlog={false}
-              title="Hotei Energy"
-              description="Hotei Energy Share Token (HEST)™© is a token created and published on the Binance Smart Chain network (BEP20), whose objective is to serve as a support economic for the development of the activities."
-              demoLink="https://hotieenergy.pluton.ltd/"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard2
-              imgPath={trapdart}
-              isBlog={false}
-              title="Trap Dart"
-              description="Trapdart is an Initial coin offering (ICOs) based project that raises funds for products and services usually related to cryptocurrency. Collecting millions of worth of tokens and utilizing them for the better."
-              demoLink="https://trapdart.io/"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard2
-              imgPath={defi}
-              isBlog={false}
-              title="DeFi Swap"
-              description="DEFISwap is a Decentralized Exchange (DEX), utilizing the automated market maker (AMM) protocol for defining digital asset prices and providing liquidity, built on Binance Smart Chain (BSC)."
-              demoLink="https://defiswap.pluton.ltd/"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard2
-              imgPath={market}
-              isBlog={false}
-              title="NFT Marketplace"
-              description="This is a non-fungible token (NFT) marketplace. Immerse yourself in a world where a user can buy, sell, and trade your unique NFTs, unlocking a realm of limitless possibilities. The Future of Web3.0."
-              demoLink="https://nftmarket.web.app/"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard2
-              imgPath={unicorn}
-              isBlog={false}
-              title="Summer Unicorn"
-              description="Immerse yourself in a streamlined experience, tailored to minting and showcasing this specific NFT type with unmatched simplicity and precision."
-              demoLink="https://crypto-z.agency/"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard2
-              imgPath={qorra}
-              isBlog={false}
-              title="Qorra ICO"
-              description="Revolutionizing the future of decentralized finance by offering a blockchain-powered ecosystem that seamlessly connects traditional financial markets with the innovation of cryptocurrencies. Join us in shaping the next generation of financial services."
-              demoLink="https://www.pinksale.finance/launchpad/0x47149c640833Fd93Fe4c7Ef78C08aebB73233f76?chain=ETH"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard2
-              imgPath={whales}
-              isBlog={false}
-              title="Whales AI"
-              description="Whalesai can help you automate tasks with the help of artificial intelligence. Artificial Intelligence (AI) is the simulation of human intelligence processes by machines, especially computer systems. AI can mimic a human mind."
-              demoLink="https://www.whalesai.com"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard2
-              imgPath={crnt}
-              isBlog={false}
-              title="Creation Network ICO"
-              description="Creationnetwork is an innovative platform that empowers global internet users by providing a comprehensive suite of tools for content creation, marketing, podcasting, and social media management. It simplifies and enhances."
-              demoLink="https://www.crnt.surge.sh"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard2
-              imgPath={gala}
-              isBlog={false}
-              title="Galarace"
-              description="Galarace.ai is a revolutionary new way to play and earn rewards. It is a blockchain-based game that allows players to earn rewards for playing and completing tasks. Players can earn rewards in the form of tokens, which can be used to purchase in-game items or exchanged for real-world currency."
-              demoLink="https://www.galarace.ai"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard2
-              imgPath={dapp}
-              isBlog={false}
-              title="Super DApp"
-              description="Our ecosystem facilitates the users to build their commodity-backed portfolios with S39 Global's software, which uses NFT minting technology. This provides equal opportunity for project owners to grow their businesses through mass market adoption on single platform. S39 Super DApps sells commodity-backed NFTs."
-              demoLink="https://www.superdapps.net"
-            />
-          </Col>
-          <Col md={4} className="project-card">
-            <ProjectCard2
-              imgPath={cip}
-              isBlog={false}
-              title="CIP Staking"
-              description="Crypto Index Pool is a simplified and secure participation in Staking, generating yield by interacting the Smart contract mechanism. CIP token has made a stealth launch on the most advance chain in the crypto which is ARBITRUM. Expanding the community by P2P networking with a mission to create space in the Blockchain Field."
-              demoLink="https://www.cryptoindexpool.com/"
-            />
-          </Col>
-        </Row>
+      <Container fluid className="project-section">
+        <Particle />
+        <Container>
+          <h1 className="project-heading">
+            My Featured <strong className="purple">Projects </strong>
+          </h1>
+          <p style={{ color: "white" }}>
+            Here are a few featured projects I've worked on recently.
+          </p>
+          <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
+            {projects.map((project, index) => (
+              <Col md={4} className="project-card" key={index}>
+                <ProjectCard
+                  imgPath={project.imgPath}
+                  isBlog={false}
+                  title={project.title}
+                  description={project.description}
+                  ghLink={project.ghLink}
+                  demoLink={project.demoLink}
+                />
+              </Col>
+            ))}
+          </Row>
+        </Container>
       </Container>
-    </Container>
-
     </>
   );
 }
 
-export default Featured;
+export default Projects;

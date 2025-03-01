@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
-import pdf from "./pdf.pdf";
+import pdf from "./Rabeeb-Aqdus-Blockchain-Developer-CV.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
@@ -21,7 +21,7 @@ function ResumeNew() {
   }
 
   const downloadCV = () => {
-    const pdfUrl = "./pdf.pdf"; // Path to the PDF file you want to download
+    const pdfUrl = "./Rabeeb-Aqdus-Blockchain-Developer-CV.pdf"; // Path to the PDF file you want to download
     const link = document.createElement("a");
     link.href = pdfUrl;
     link.download = "Rabeeb-Aqdus-Blockchain-Developer-CV.pdf"; // Specify the filename for the downloaded file

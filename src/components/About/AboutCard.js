@@ -8,23 +8,27 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi, I am <span className="purple">Rabeeb Aqdus Jilani</span>
-            from <span className="purple"> Karachi, Pakistan.</span>
-            <br /> I am a passionate Software Engineer, MERN Stack Developer, and Smart Contract Engineer.
+            Hello! I’m <span className="purple">Rabeeb Aqdus</span> from <span className="purple">Karachi, Pakistan</span>.
             <br />
-            I have worked as a Software Engineer at **Decrypted Labs**.
+            I’m an enthusiastic and results-driven <b>Software Engineer</b> with a passion for building scalable web applications. With over <b>3+ years of experience</b> in the tech industry, I’ve had the opportunity to work across multiple domains, mastering full-stack development and diving deep into <b>AI-driven technologies</b> and <b>blockchain solutions</b>.
             <br />
-            Currently, I am pursuing my Master’s degree in **Intelligent Interactive Systems** at **Universität Bielefeld**.
+            Currently, I'm pursuing a <b>Master's in Intelligent Interactive Systems</b> at <b>Universität Bielefeld</b>, specializing in emerging technologies like Artificial Intelligence, Machine Learning, and Data Science.
             <br />
             <br />
-            Apart from coding, some activities I enjoy include:
+            In my previous role as a <b>Software Engineer at Decrypted Labs</b>, I had the chance to work on diverse projects, refining my problem-solving skills and applying cutting-edge technologies. My expertise includes building robust applications using the <b>MERN stack</b> and developing decentralized systems through <b>blockchain technologies</b>.
+            <br />
+            <br />
+            Outside of coding, I’m passionate about:
           </p>
           <ul>
             <li className="about-activity">
-              <ImPointRight /> Playing Games
+              <ImPointRight /> <b>Gaming</b> – Exploring new worlds and challenges
             </li>
             <li className="about-activity">
-              <ImPointRight /> Travelling
+              <ImPointRight /> <b>Traveling</b> – Discovering new places and cultures
+            </li>
+            <li className="about-activity">
+              <ImPointRight /> Learning new technologies and sharing knowledge with others.
             </li>
           </ul>
 

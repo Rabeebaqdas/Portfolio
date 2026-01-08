@@ -27,6 +27,16 @@ function ResumeNew() {
     setNumPages(numPages);
   }
 
+  // ✅ Correct download logic (no SPA redirect)
+  const downloadCV = () => {
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "Rabeeb-Aqdus-Software-Engineer-CV.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="min-vh-100">
       <Container fluid className="resume-section min-vh-100">
@@ -34,16 +44,14 @@ function ResumeNew() {
 
         {/* Download Button */}
         <Row className="justify-content-center mb-4">
-          <a
-            href={pdfUrl}
-            download="Rabeeb-Aqdus-Software-Engineer-CV.pdf"
-            style={{ textDecoration: "none" }}
+          <Button
+            variant="primary"
+            onClick={downloadCV}
+            style={{ maxWidth: "250px" }}
           >
-            <Button variant="primary" style={{ maxWidth: "250px" }}>
-              <AiOutlineDownload />
-              &nbsp; Download CV
-            </Button>
-          </a>
+            <AiOutlineDownload />
+            &nbsp; Download CV
+          </Button>
         </Row>
 
         {/* Resume PDF */}

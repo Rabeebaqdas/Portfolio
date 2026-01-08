@@ -5,70 +5,63 @@ import Particle from "../Particle";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/esm/Page/AnnotationLayer.css";
-
-// PDF worker setup
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
-
 // ✅ Public PDF path
 const pdfUrl = "/Rabeeb-Aqdus-Software-Engineer-CV.pdf";
 
 function ResumeNew() {
-  const [width, setWidth] = useState(window.innerWidth);
+  const [width, setWidth] = useState(1200);
   const [numPages, setNumPages] = useState(null);
 
-  // Handle window resize
   useEffect(() => {
-    const handleResize = () => setWidth(window.innerWidth);
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    setWidth(window.innerWidth);
   }, []);
 
   function onLoadSuccess({ numPages }) {
     setNumPages(numPages);
   }
 
+  const downloadCV = () => {
+    const link = document.createElement("a");
+    link.href = pdfUrl;
+    link.download = "Rabeeb-Aqdus-Software-Engineer-CV.pdf"; // Specify the filename for the downloaded file
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   return (
     <div className="min-vh-100">
       <Container fluid className="resume-section min-vh-100">
         <Particle />
-
-        {/* Download Button */}
-        <Row className="justify-content-center mb-4">
-          <a
-            href={pdfUrl} // PDF URL
-            download="Rabeeb-Aqdus-Software-Engineer-CV.pdf" // Specify file name on download
-            style={{ textDecoration: "none" }} // To prevent any underline
+        <Row style={{ justifyContent: "center", position: "relative" }}>
+          <Button
+            variant="primary"
+            onClick={downloadCV} // Trigger the download on button click
+            style={{ maxWidth: "250px" }}
           >
-            <Button variant="primary" style={{ maxWidth: "250px" }}>
-              <AiOutlineDownload />
-              &nbsp; Download CV
-            </Button>
-          </a>
+            <AiOutlineDownload />
+            &nbsp;Download CV
+          </Button>
         </Row>
 
-        {/* Resume PDF */}
-        <Row className="resume justify-content-center">
+        <Row className="resume">
           <Document
             file={pdfUrl}
+            className="d-flex gap-3 flex-column justify-content-center w-100"
             onLoadSuccess={onLoadSuccess}
-            loading="Loading resume..."
-            className="d-flex flex-column align-items-center w-100"
           >
-            {Array.from(new Array(numPages), (_, index) => (
+            {/* Render each page dynamically based on the number of pages */}
+            {Array.from(new Array(numPages), (el, index) => (
               <div
                 key={index}
                 style={{
-                  marginBottom: "30px",
-                  display: "flex",
-                  justifyContent: "center",
-                  width: "100%",
+                  marginBottom: "20px",
+                  width: "fit-content",
+                  margin: "0 auto",
                 }}
               >
-                <Page
-                  pageNumber={index + 1}
-                  width={Math.min(width * 0.9, 900)}
-                  renderTextLayer={false}
-                />
+                <Page pageNumber={index + 1} scale={width > 786 ? 1.7 : 0.6} />
               </div>
             ))}
           </Document>

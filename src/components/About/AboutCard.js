@@ -8,7 +8,7 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hello! I’m <span className="purple">Rabeeb Aqdus</span> from <span className="purple">Karachi, Pakistan</span>.
+            Hello! I’m <span className="purple">Rabeeb Aqdus Jilani</span> from <span className="purple">Karachi, Pakistan</span>.
             <br />
             I’m an enthusiastic and results-driven <b>Software Engineer</b> with a passion for building scalable web applications. With over <b>3+ years of experience</b> in the tech industry, I’ve had the opportunity to work across multiple domains, mastering full-stack development and diving deep into <b>AI-driven technologies</b> and <b>blockchain solutions</b>.
             <br />

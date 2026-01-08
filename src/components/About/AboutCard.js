@@ -8,12 +8,13 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi, I am <span className="purple">Rabeeb Aqdus </span>
+            Hi, I am <span className="purple">Rabeeb Aqdus Jilani</span>
             from <span className="purple"> Karachi, Pakistan.</span>
-            <br /> I am a passionate Software Engineer, Smart Contract Developer, and MERN Stack Developer.
+            <br /> I am a passionate Software Engineer, MERN Stack Developer, and Smart Contract Engineer.
             <br />
-            Currently, I am working as a Smart Contract Engineer at
-            Decrypted Labs.
+            I have worked as a Software Engineer at **Decrypted Labs**.
+            <br />
+            Currently, I am pursuing my Master’s degree in **Intelligent Interactive Systems** at **Universität Bielefeld**.
             <br />
             <br />
             Apart from coding, some activities I enjoy include:

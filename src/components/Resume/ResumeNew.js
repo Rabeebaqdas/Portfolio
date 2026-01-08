@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Container, Row } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
 import Particle from "../Particle";
-import pdf from "./Rabeeb-Aqdus-Software-Engineer-CV.pdf";
 import { AiOutlineDownload } from "react-icons/ai";
 import { Document, Page, pdfjs } from "react-pdf";
 
@@ -12,11 +11,14 @@ import "react-pdf/dist/esm/Page/TextLayer.css";
 // PDF worker setup
 pdfjs.GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
 
+// ✅ Public PDF path
+const pdfUrl = "/Rabeeb-Aqdus-Software-Engineer-CV.pdf";
+
 function ResumeNew() {
   const [width, setWidth] = useState(window.innerWidth);
   const [numPages, setNumPages] = useState(null);
 
-  // Handle window resize properly
+  // Handle window resize
   useEffect(() => {
     const handleResize = () => setWidth(window.innerWidth);
     window.addEventListener("resize", handleResize);
@@ -27,9 +29,10 @@ function ResumeNew() {
     setNumPages(numPages);
   }
 
+  // ✅ Correct download logic (no SPA redirect)
   const downloadCV = () => {
     const link = document.createElement("a");
-    link.href = pdf;
+    link.href = pdfUrl;
     link.download = "Rabeeb-Aqdus-Software-Engineer-CV.pdf";
     document.body.appendChild(link);
     link.click();
@@ -56,12 +59,12 @@ function ResumeNew() {
         {/* Resume PDF */}
         <Row className="resume justify-content-center">
           <Document
-            file={pdf}
+            file={pdfUrl}
             onLoadSuccess={onLoadSuccess}
             loading="Loading resume..."
             className="d-flex flex-column align-items-center w-100"
           >
-            {Array.from(new Array(numPages), (el, index) => (
+            {Array.from(new Array(numPages), (_, index) => (
               <div
                 key={index}
                 style={{
